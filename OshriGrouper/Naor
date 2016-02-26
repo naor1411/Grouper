@@ -1,0 +1,28 @@
+<div layout="column">
+ <div>
+	  start page
+	  </br> 
+		
+		       <ng-map zoom="20" center="current">
+			   <marker position="current" animation="Animation.BOUNCE" centered="true"></marker>
+			   <directions
+				draggable="fslse"
+				panel="directions-panel"
+				travel-mode="DRIVING"
+				origin="current-location"
+				destination="{{loc}}">
+			   </directions>
+			 </ng-map>
+	
+		<md-input-container>
+            <label>Direccion</label>
+            <input ng-model="loc" ng-model-options="{debounce: 1000}" ng-change="buscarDireccion()" ng-init="loc='ירושלים'"/>
+        </md-input-container>
+		 </br> 
+ <p>this is test for angular 1+1={{1+1}}</p>
+ </div>
+<div id="directions-panel" style="width: 50%; float:left; height: 100%; overflow: auto; padding: 0px 5px">
+</div> 
+
+ End page
+</div>
